@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <title>View all Helpers Here</title>
+     <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
+   
+
+</head>
+
+<body>
+<style type="text/css">
+
+    	.wrapper {
+  width: 68em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #777;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.product-grid {
+  width: 92em;
+  margin: 2rem auto;
+  background: #b74040
+}
+.product-grid.product-grid--flexbox .product-grid__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-grid.product-grid--flexbox .product-grid__title {
+  height: auto;
+}
+.product-grid.product-grid--flexbox .product-grid__title:after {
+  display: none;
+}
+.product-grid__wrapper {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+.product-grid__product-wrapper {
+  padding: 1rem;
+  float: left;
+  width: 25%;
+}
+.product-grid__product {
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 4px;
+}
+.product-grid__product:hover {
+  box-shadow: 0px 0px 0px 1px #eee;
+  z-index: 50;
+}
+.product-grid__product:hover .product-grid__extend {
+  display: block;
+}
+.product-grid__img-wrapper {
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: 150px;
+}
+.product-grid__img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+.product-grid__title {
+  margin-top: .875rem;
+  display: block;
+  font-size: 1.125em;
+  color: #222;
+  height: 3em;
+  overflow: hidden;
+  position: relative;
+}
+.product-grid__title:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2.4em;
+  height: 1.5em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%);
+}
+.product-grid__price {
+  color: #E91E63;
+  font-weight: bold;
+  letter-spacing: .4px;
+}
+.product-grid__extend-wrapper {
+  position: relative;
+}
+.product-grid__extend {
+  display: none;
+  position: absolute;
+  padding: 0 1rem 1rem 1rem;
+  margin: .4375rem -1rem 0;
+  box-shadow: 0px 0px 0px 1px #eee;
+  background: #fff;
+  border-radius: 0 0 4px 4px;
+}
+.product-grid__extend:before {
+  content: "";
+  height: .875rem;
+  width: 100%;
+  position: absolute;
+  top: -.4375rem;
+  left: 0;
+  background: #fff;
+}
+.product-grid__description {
+  font-size: .875em;
+  margin-top: .4375rem;
+  margin-bottom: 0;
+}
+.product-grid__btn {
+  display: inline-block;
+  font-size: .875em;
+  color: #777;
+  background: #eee;
+  padding: .5em .625em;
+  margin-top: .875rem;
+  margin-right: .625rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.product-grid__btn i.fa {
+  margin-right: .3125rem;
+}
+.product-grid__add-to-cart {
+  color: #fff;
+  background: #E91E63;
+}
+.product-grid__add-to-cart:hover {
+  background: #ee4c83;
+}
+.product-grid__view {
+  color: #777;
+  background: #eee;
+}
+.product-grid__view:hover {
+  background: white;
+}
+</style>
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="/home"><span class="glyphicon glyphicon-home"></span> Home</a>
+      </li>
+      <li>
+        <a href="/logout"><span class="glyphicon glyphicon-user"></span> Logout </a>
+      </li>
+      </ul>
+      
+  </div>
+</nav>
+ <!--  
+	<div class="wrapper">
+	<div class="desc">
+		<h1 class="text-right">VIEW ALL HELPERS HERE</h1>
+</div>
+-->
+	<div class="content">
+		<!-- content here -->
+		<div class="product-grid product-grid--flexbox">
+			<div class="product-grid__wrapper"style="border-size:2px;border-style:solid;border-color:black;">
+				<!-- Product list start here -->
+
+				<!-- Single product -->
+				{% for key,value,value1,value2,value3,photo,cost in dict %}
+					<div class="product-grid__product-wrapper">
+						<div class="product-grid__product">
+							<div class="product-grid__img-wrapper">			
+								<img src={{photo}} alt="Img" class="product-grid__img" />
+							</div>
+							<span class="product-grid__title">{{value1}}  {{value2}}</span>
+							<span class="product-grid__price">Skills:{{value|safe}}</span>
+							<div class="product-grid__extend-wrapper">
+								<div class="product-grid__extend">
+									<p class="product-grid__description">{{key}}</p>
+									<span class="product-grid__btn product-grid__add-to-cart"><i class="fa fa-cart-arrow-down"></i><a href={{value3}}>VIEW PROFILE</a></span>
+                  <span></span>
+									<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> Price:{{cost}}</span>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				<!-- end Single product -->
+
+				
+			</div>		
+		</div>
+	</div>
+<br>
+<br>
+<br>
+
+<footer class="text-center" style="margin-top: 10px">
+  
+  <p style="color: black;font-size: 20px"> <strong>Under Developement by Rudresh Panchal and Nimit Parekh</strong></p>
+
+</footer>
+</div>
+</body>

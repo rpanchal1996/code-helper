@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<link REL=StyleSheet HREF="{% static "aural.css" %}" TYPE="text/css" />
+</head>
+<body>
+<div class="login">
+	<h1>Register as Coder</h1>
+    
+    <form method="post" action="/registercoder/" enctype="multipart/form-data">
+    	{% csrf_token %}
+    	<input type="email" name="username" placeholder="Email-ID" required="required" id="txtEmail" />
+    	<input type="text" name="fname" placeholder="First Name" required="required" />
+    	<input type="text" name="lname" placeholder="Last Name" required="required" />
+        <input type="password" name="password" placeholder="Password" required="required" />
+        <input type="number" name="semester" placeholder="Semester"></input>
+        <button type="submit" class="btn btn-primary btn-block btn-large" onclick='Javascript:checkEmail();'>Register!</button>
+    </form>
+</div>
+</body>
+<script type="text/javascript">
+    var email = document.getElementById('txtEmail');
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if (!filter.test(email.value)) {
+    alert('Please provide a valid email address');
+    email.focus;
+    return false;
+
+</script>
+
+    
+
+</html>

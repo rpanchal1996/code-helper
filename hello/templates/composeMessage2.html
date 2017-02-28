@@ -1,0 +1,212 @@
+{%load static%}
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<head>
+
+	<title>Your Message</title>
+
+	<!-- For-Mobile-Apps -->
+		
+	<!-- //For-Mobile-Apps -->
+
+	<!-- Style --> 
+
+	<!-- Web-Fonts -->
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" 	type="text/css"  media="all">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" 	type="text/css"  media="all">
+	<!-- //Web-Fonts -->
+
+</head>
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+<style type="text/css">
+	
+	html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+	article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+	ol,ul{list-style:none;padding:0;margin:0;}
+	blockquote,q{quotes:none;}
+	blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+	table{border-collapse:collapse;border-spacing:0;}
+	/* start editing from here */
+	a{text-decoration:none;}
+	.txt-rt{text-align:right;}/* text align right */
+	.txt-lt{text-align:left;}/* text align left */
+	.txt-center{text-align:center;}/* text align center */
+	.float-rt{float:right;}/* float right */
+	.float-lt{float:left;}/* float left */
+	.clear{clear:both;}/* clear float */
+	.pos-relative{position:relative;}/* Position Relative */
+	.pos-absolute{position:absolute;}/* Position Absolute */
+	.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+	.vertical-top{	vertical-align:top;}/* vertical align top */
+	.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
+	nav.vertical ul li{	display:block;}/* vertical menu */
+	nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+	img{max-width:100%;}
+	/*img[width],img[height]{width:auto;height:auto;} wordpress hack to reset the attributes (while making responsive) */
+
+/*-- Reset Code --*/
+
+
+
+/*-- Index-Page-Styling --*/
+
+body {
+    background-color: #00405d;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-image: url("{% static 'composePage2.jpg'%}");
+}
+
+body a {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    text-decoration: none;
+}
+
+input[type="button"], input[type="submit"] {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 50px auto;
+    letter-spacing: 3px;
+}
+
+.container {
+    width: 30%;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    padding: 30px;
+}
+
+.contact label {
+    color: #F96D6E;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.contact input[type="text"], .contact input[type="email"], .contact textarea {
+    width: 94.5%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    outline: none;
+    color: #000;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact textarea {
+    height: 300px;
+}
+
+.contact ::-webkit-input-placeholder {
+    color: #666;
+}
+
+.contact ::-moz-placeholder {
+    color: #666;
+}
+
+.contact ::-moz-placeholder {
+    color: #666;
+}
+
+.contact ::-ms-input-placeholder {
+    color: #666;
+}
+
+.send-button input[type="submit"] {
+    padding: 10px 0;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    color: #FFF;
+    background-color: #009688;
+    cursor: pointer;
+}
+
+.send-button input[type="submit"]:hover {
+    background-color: #F96D6E;
+}
+
+.footer {
+    margin: 50px 20px 30px;
+}
+
+.footer p a {
+    color: #FFF;
+}
+
+.footer p {
+    line-height: 30px;
+}
+
+.footer p a:hover {
+    color: #F96D6E;
+}
+
+/*-- Index-Page-Styling --*/
+
+
+
+
+
+/*--- Responsive Code ---*/
+
+
+/*--- Responsive Code ---*/
+</style>
+
+	<h1>Write a message</h1>
+
+	<div class="container">
+
+		<div class="contact">
+			<form method="post">
+				{% csrf_token %}
+                <label>To</label>
+				<input type="text"placeholder="To: {{to}}" disabled="true">
+				<label>Subject</label>
+				<input type="text" placeholder="Enter the subject here." required="true" name="subject">
+				<label>MESSAGE</label>
+				<textarea placeholder="Enter your message here" required="true" name="message"></textarea>
+				<div class="send-button">
+					<input type="submit" name="Send Message" value="Send Message">
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+
+</body>
+<!-- //Body -->
+
+</html>

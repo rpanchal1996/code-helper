@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Code Helper</title>
+
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="The Curriculum Vitae of Joe Bloggs."/>
+<meta charset="UTF-8"> 
+ <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet" href="style.css">
+<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+<link REL=StyleSheet HREF="{% static "helperProfile.css" %}" TYPE="text/css" />
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body id="top">
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="/home"><span class="glyphicon glyphicon-home"></span> Home</a>
+      </li>
+      <li>
+        <a href="/logout"><span class="glyphicon glyphicon-user"></span> Logout </a>
+      </li>
+      </ul>
+      
+  </div>
+</nav>
+
+<div id="cv" class="instaFade">
+  <div class="mainDetails">
+    <div id="headshot" class="quickFade">
+      <img src="{{ image_url }}" alt="Alan Smith" />
+    </div>
+    
+    <div id="name">
+      <h1 class="quickFade delayTwo">{{fname}}  {{lname}}</h1>
+      
+    </div>
+    
+    <div id="contactDetails" class="quickFade delayFour">
+      <ul>
+        
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+  
+  <div id="mainArea" class="quickFade delayFive">
+    <section>
+      <article>
+        <div class="sectionTitle">
+          <h1>Personal Details:</h1>
+        </div>
+        
+        <div class="sectionContent">
+        
+        <textarea  rows="5" class="form-control" disabled="disabled" >{{personal_details}}</textarea>
+        
+        </div>
+      </article>
+      <div class="clear"></div>
+    </section>
+    
+    
+    <section>
+      <div class="sectionTitle">
+        <h1>Contact Details</h1>
+      </div>
+      
+      <div class="sectionContent">
+        <article>
+        <p>
+          <ul>
+            <li>Email: <a href="mailto:{{email}}" target="_blank">{{email}}</a></li>
+            <br>
+            <li>GitHub: <a href={{github_link}}>{{github_link}}</a></li>
+            <br>
+            <li>Mobile: {{phone}}</li>
+          </ul>
+        </p>
+         
+        </article>
+        
+        
+      </div>
+      <div class="clear"></div>
+    </section>
+    
+    
+    <section>
+      <div class="sectionTitle">
+        <h1>Skills</h1>
+      </div>
+      
+      <div class="sectionContent">
+        <ul class="keySkills">
+          {% for i in skills%}
+          <li>{{i}} </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </section>
+    <section>
+      <div class="sectionTitle">
+        <h1>Contact him!</h1>
+      </div>
+      
+      <div class="sectionContent">
+        <a type="button" class="btn-block btn-primary btn"href="/sms">Notify Him Over SMS!</a>
+
+        <!--
+        <button class="btn-block btn-primary btn">Contact Him!</button>
+        -->
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="sectionContent">
+        <a type="button" class="btn-block btn-primary btn" href="/compose/{{id}}">Message him internally</a>
+
+        <!--
+        <button class="btn-block btn-primary btn">Contact Him!</button>
+        -->
+      </div>
+
+      <div class="clear"></div>
+    </section>
+  </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3753241-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<footer class="text-center" style="margin-top: 10px">
+  
+  <p style="color: white;font-size: 20px"> <strong>Under Developement by Rudresh Panchal and Nimit Parekh</strong></p>
+  
+</footer>
+</body>
+</html>

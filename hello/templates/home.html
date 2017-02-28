@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="jumbotronalt text-center" >
+  <div class="container">
+    <br>
+    <br>
+    <h1 style="color:white;">Welcome back <strong>{{fname}} {{lname}}</strong> </h1>
+
+    <p  style="color:white;">This is a website which will help coders seek better help. Made as a part of our webtechnology project.</p>
+    <br>
+    <br>
+    <a type="button" class="btn btn-lg btn-default" href=/viewhelpers><span class="glyphicon glyphicon-flash"></span> View Helpers</a>
+    </br>
+    </br>         
+    {% if show%}
+    <a type="button" class="btn btn-lg btn-primary" href=/editprofile><span class="glyphicon glyphicon-flash"></span>Edit contact information</a>
+
+    <a type="button" class="btn btn-lg btn-primary" href=/skills><span class="glyphicon glyphicon-flash"></span>Edit Skills and Wage</a>
+   
+    <a type="button" class="btn btn-lg btn-primary" href=/inbox><span class="glyphicon glyphicon-flash"></span>View Internal Messages</a>
+    
+    {%endif%}
+  </div>
+
+  <br>
+  <br>
+  <br>
+   <br>
+  <br>
+  <br><br>
+  <br>
+  <br><br>
+  <br>
+  <br> 
+  </div>
+<footer class="text-center" style="margin-top: 10px">
+  
+  <p style="color: black;font-size: 20px"> <strong>Under Developement by Rudresh Panchal and Nimit Parekh</strong></p>
+  
+</footer>
+</br>
+</br>
+
+</div>
+{% endblock %}

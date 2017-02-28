@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <title>Completely CSS: Custom checkboxes, radio buttons and select boxes</title>
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="{% static "normalize.css" %}">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    
+
+</head>
+
+  <body>
+  <style type="text/css">
+
+
+  </style>
+    <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="/home"><span class="glyphicon glyphicon-home"></span> Home</a>
+      </li>
+      <li>
+        <a href="/logout"><span class="glyphicon glyphicon-user"></span> Logout </a>
+      </li>
+       </div>
+</nav>
+
+    
+
+
+    <form method="post" action="/skill/" enctype="multipart/form-data">
+            {% csrf_token %}    
+      <div class="container">
+        <div class="control-group">
+          <h1>Please tick your skills</h1>
+          <label class="control control--checkbox">Python
+            <input type="checkbox" name="checks" value="python"/>
+            <div class="control__indicator"></div>
+          </label>
+          <label class="control control--checkbox">Javascript
+            <input type="checkbox" name="checks" value="javascript"/>
+            <div class="control__indicator"></div>
+          </label>
+          <label class="control control--checkbox">HTML CSS
+            <input type="checkbox" name="checks" value="htmlcss"/>
+            <div class="control__indicator"></div>
+          </label>
+          <label class="control control--checkbox">JQUERY
+            <input type="checkbox" name="checks" value="jquery"/>
+            <div class="control__indicator"></div>
+          </label>
+          <label class="control control--checkbox">GIT
+            <input type="checkbox" name="checks" value="GIT"/>
+            <div class="control__indicator"></div>
+          </label>
+          <label class="control control--checkbox">ML
+            <input type="checkbox" name="checks" value="ML"/>
+            <div class="control__indicator"></div>
+          </label>
+          <label class="control control--checkbox">C#
+            <input type="checkbox" name="checks" value="C#"/>
+            <div class="control__indicator"></div>
+          </label>
+           <label style="font-size:15px"> ENTER YOUR COST PER HOUR HERE <br>
+           <input type="number" name="cost" placeholder="COST"></input>
+           </label>
+          <br>
+          <br>
+        <button class="btn btn-primary" type="submit">Register!</button> 
+        </div>
+      </div>
+     
+       
+
+    </form>
+  </body>
+</html>
